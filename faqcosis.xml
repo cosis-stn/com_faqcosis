@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0" method="upgrade">
+    <name>com_faqcosis</name>
+    <creationDate>2016-10-19</creationDate>
+    <copyright>© 2016 Secretaria do Tesouro Nacional. Todos os direitos reservados.</copyright>
+    <license>GNU General Public License versão 2 ou posterior; consulte o arquivo License. txt</license>
+    <author>Clayton Alves Rodrigues</author>
+    <authorEmail>clayton.rodrigues@tesouro.gov.br</authorEmail>
+    <authorUrl>http://tesouro.gov.br</authorUrl>
+    <version>CVS: 1.0.0</version>
+    <description>FAQ (Frequently Asked Questions). Segregado para grupos de usuários e seção.</description>
+    
+    
+    
+    <install> <!-- Runs on install -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+    <update> <!-- Runs on update -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/update.mysql.utf8.sql</file>
+        </sql>
+    </update>
+    <uninstall> <!-- Runs on uninstall -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+
+    <files folder="site">
+        <filename>index.html</filename>
+        <filename>faqcosis.php</filename>
+        <filename>controller.php</filename>
+        <filename>router.php</filename>
+        <folder>views</folder>
+        <folder>models</folder>
+        <folder>controllers</folder>
+        <folder>helpers</folder>
+    </files>
+    <media destination="com_faqcosis" folder="media">
+        <folder>js</folder>
+        <folder>css</folder>
+    </media>
+    <languages folder="languages/site">
+        
+        <language tag="en-GB">en-GB/en-GB.com_faqcosis.ini</language>
+        <language tag="pt-BR">pt-BR/pt-BR.com_faqcosis.ini</language>
+    </languages>
+    <administration>
+        <menu img="media/com_faqcosis/images/s_com_faqcosis.png" >COM_FAQCOSIS</menu>
+        <submenu>
+            
+            <menu link="option=com_faqcosis&amp;view=perguntasfrequentes" view="perguntasfrequentes" img="media/com_faqcosis/images/s_perguntasfrequentes.png" alt="Faqcosis/Perguntasfrequentes">COM_FAQCOSIS_TITLE_PERGUNTASFREQUENTES</menu>
+
+            <menu link="option=com_categories&amp;extension=com_faqcosis" view="categories" img="media/com_faqcosis/images/s_perguntasfrequentes.png" alt="Faqcosis/Categories">COM_FAQCOSIS_PERGUNTASFREQUENTES_CATEGORIA</menu>
+
+        </submenu>
+        <files folder="administrator">
+            <filename>access.xml</filename>
+            <filename>config.xml</filename>
+            <filename>controller.php</filename>
+            <filename>index.html</filename>
+            <filename>faqcosis.php</filename>
+            <folder>controllers</folder>
+            <folder>assets</folder>
+            <folder>helpers</folder>
+            <folder>models</folder>
+            <folder>sql</folder>
+            <folder>tables</folder>
+            <folder>views</folder>
+        </files>
+        <languages folder="languages/administrator">            
+            <language tag="en-GB">en-GB/en-GB.com_faqcosis.ini</language>
+            <language tag="en-GB">en-GB/en-GB.com_faqcosis.sys.ini</language>
+            <language tag="pt-BR">pt-BR/pt-BR.com_faqcosis.ini</language>
+            <language tag="pt-BR">pt-BR/pt-BR.com_faqcosis.sys.ini</language>
+        </languages>
+    </administration>
+    <config>
+        <fields name="params">
+            <fieldset name="component">
+                <field name="save_history" default="0" />
+            </fieldset>
+        </fields>
+    </config>
+    <plugins>
+        <plugin group="search" plugin="faqcosis"/>
+    </plugins>
+    
+</extension>

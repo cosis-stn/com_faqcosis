@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+  <fieldset addfieldpath="/administrator/components/com_categories/models/fields" >
+    <field 
+        name="id" 
+        type="text" 
+        readonly="true" 
+        class="readonly" 
+        default="0" 
+        description="JGLOBAL_FIELD_ID_DESC"
+    />
+    <field 
+        name="pergunta" 
+        type="text" 
+        size="1000" 
+        maxlength="1000" 
+        filter="safehtml" 
+        required="true" 
+        label="COM_FAQCOSIS_FORM_LBL_PERGUNTASFREQUENTE_PERGUNTA" 
+        description="COM_FAQCOSIS_FORM_DESC_PERGUNTASFREQUENTE_PERGUNTA" 
+        hint="COM_FAQCOSIS_FORM_LBL_PERGUNTASFREQUENTE_PERGUNTA"
+    />
+
+    <field 
+        name="manual" 
+        type="hidden" 
+    />
+    <field 
+        name="categoria" 
+        type="categoryedit" 
+        extension="com_faqcosis" 
+        required="true" 
+        label="COM_FAQCOSIS_FORM_LBL_PERGUNTASFREQUENTE_CATEGORIA" 
+        description="COM_FAQCOSIS_FORM_DESC_PERGUNTASFREQUENTE_CATEGORIA" 
+        hint="COM_FAQCOSIS_FORM_LBL_PERGUNTASFREQUENTE_CATEGORIA"
+    />
+    <field 
+        name="resposta" 
+        type="editor" 
+        hide="article,readmore" 
+        filter="safehtml" 
+        required="true" 
+        label="COM_FAQCOSIS_FORM_LBL_PERGUNTASFREQUENTE_RESPOSTA" 
+        description="COM_FAQCOSIS_FORM_DESC_PERGUNTASFREQUENTE_RESPOSTA" 
+        hint="COM_FAQCOSIS_FORM_LBL_PERGUNTASFREQUENTE_RESPOSTA"
+    />
+    <field 
+        name="ordering"
+    />
+    <field 
+        name="state" 
+        default="1" 
+        type="list" 
+        label="JSTATUS" 
+        description="JFIELD_PUBLISHED_DESC" 
+        class="inputbox" 
+        size="1">
+      <option value="1">JPUBLISHED</option>
+      <option value="0">JUNPUBLISHED</option>
+      <option value="2">JARCHIVED</option>
+      <option value="-2">JTRASHED</option>
+    </field>
+    <field 
+        name="checked_out" 
+        type="hidden" 
+        filter="unset"
+    />
+    <field 
+        name="checked_out_time" 
+        default="0000-00-00 00:00:00" 
+        type="hidden" 
+        filter="unset"
+    />
+    <field 
+        name="created_by" 
+        type="createdby" 
+        default="0" 
+        label="COM_FAQCOSIS_FORM_LBL_PERGUNTASFREQUENTE_CREATED_BY" 
+        description="COM_FAQCOSIS_FORM_DESC_PERGUNTASFREQUENTE_CREATED_BY" 
+        hidden="true" 
+        hint="COM_FAQCOSIS_FORM_LBL_PERGUNTASFREQUENTE_CREATED_BY"
+    />
+    <field 
+        name="modified_by" 
+        type="modifiedby" 
+        default="0" 
+        label="COM_FAQCOSIS_FORM_LBL_PERGUNTASFREQUENTE_MODIFIED_BY" 
+        description="COM_FAQCOSIS_FORM_DESC_PERGUNTASFREQUENTE_MODIFIED_BY" 
+        hidden="true" 
+        hint="COM_FAQCOSIS_FORM_LBL_PERGUNTASFREQUENTE_MODIFIED_BY"
+    />
+    <field 
+        name="version_note" 
+        type="text" 
+        label="JGLOBAL_FIELD_VERSION_NOTE_LABEL" 
+        description="JGLOBAL_FIELD_VERSION_NOTE_DESC" 
+        class="inputbox" 
+        size="45" 
+        labelclass="control-label"
+    />
+    <field 
+        name="filter_categoria" 
+        type="category" 
+        extension="com_faqcosis" 
+        show_root="1" 
+        onchange="this.form.submit();"
+    />
+  </fieldset>
+  <fieldset name="accesscontrol">
+    <field 
+        name="asset_id" 
+        type="hidden" 
+        filter="unset"
+    />
+    <field 
+        name="rules" 
+        type="rules" 
+        label="JFIELD_RULES_LABEL" 
+        translate_label="false" 
+        filter="rules" 
+        validate="rules" 
+        class="inputbox" 
+        component="com_faqcosis" 
+        section="perguntasfrequente"
+    />
+  </fieldset>
+</form>

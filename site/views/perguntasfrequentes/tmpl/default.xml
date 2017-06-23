@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+    <layout title="COM_FAQCOSIS_TITLE_LIST_VIEW_PERGUNTASFREQUENTES" option="View">
+        <message>
+                        <![CDATA[COM_FAQCOSIS_TITLE_LIST_VIEW_PERGUNTASFREQUENTES_DESC]]>
+        </message>
+    </layout>
+    <fields name="params" >
+        <fieldset name="request">
+            <field 
+                name="category"
+                type="category"
+                extension="com_faqcosis"
+                show_root="false"
+                required="true"
+                default=""
+                label="Categoria"
+                description=""
+            />
+        </fieldset>
+    </fields>        
+</metadata>
